@@ -1,6 +1,9 @@
 const sections = document.querySelectorAll('section');
 const navLinks = document.querySelectorAll('.js-link');
 const menuToggler = document.getElementById('menu-toggler');
+const modalRegister = document.querySelector('.js-modal-register');
+const modalToggle = document.querySelectorAll('.js-register-toggle');
+const modalClose = document.querySelector('.js-modal-close');
 
 window.onscroll = () => {
   let current = '';
@@ -27,4 +30,14 @@ navLinks.forEach((link) => {
   link.addEventListener('click', () => {
     menuToggler.checked = false;
   });
+});
+
+modalToggle.forEach((toggle) => {
+  toggle.addEventListener('click', () => {
+    modalRegister.classList.remove('hidden');
+  });
+});
+
+modalClose.addEventListener('click', () => {
+  modalRegister.classList.add('hidden');
 });
